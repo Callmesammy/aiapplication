@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -50,14 +49,13 @@ export function Signup() {
               <FormControl>
                 <Input placeholder="enter email" {...field} />
               </FormControl>
-              <FormDescription>
-                Login with your email account
-              </FormDescription>
+             
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="bg-orange-600 w-full font-bold text-pretty">Login</Button>
+        
+        <Button type="submit" className="bg-orange-600 w-full font-bold text-pretty">Signup</Button>
       </form>
     </Form>
   )

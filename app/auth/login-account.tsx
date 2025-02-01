@@ -51,7 +51,7 @@ export function Login() {
                 <Input placeholder="enter email" {...field} />
               </FormControl>
               <FormDescription>
-                Login with your email account
+                Login with your email address
               </FormDescription>
               <FormMessage />
             </FormItem>

@@ -26,9 +26,9 @@ const Auth = () => {
 
             </Link>
             </div>
-            <div className="pt-3 flex  ">
+            <div className="pt-1 space-y-2 flex flex-col ">
                 <h1 className="flex font-bold text-pretty text-lg">
-            {formhere === "login" ? " ": "signup"} </h1>
+            {formhere === "login" ? " Login": "Signup"} </h1>
                 {formhere === "login" && <div className="flex flex-col text-muted-foreground text-sm"><Login/> <div className="flex justify-between items-center"> <p className="flex pt-3 ">No account ? <span className="text- text-orange-500 text-sm text-pretty cursor-pointer hover:underline pl-2" onClick={()=>setFormher("signup")}> Sign up </span></p><div className="flex space-x-3 text-xm items-center pt-3">
                 <Link href="/" className="flex hover:scale-105 rounder hover:font-bold"> Privacy </Link>
                 <Link href="/" className="flex hover:scale-105 rounder hover:font-bold"> Terms </Link>
@@ -36,7 +36,7 @@ const Auth = () => {
 
 
                 </div></div></div>}
-                {formhere === "signup" && <><Signup/></>}
+                {formhere === "signup" && <div className="flex flex-col text-sm text-muted-foreground "><Signup/><p className="pt-3 flex ">already have an account? <span className="font-semibold text-orange-600 pl-3 cursor-pointer hover:underline" onClick={()=>setFormher("login")}>login</span></p></div>}
 
             </div>
             </div>
