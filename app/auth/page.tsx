@@ -6,6 +6,7 @@ import { CiCloudRainbow } from "react-icons/ci";
 import { FaGithubAlt } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Login } from "./login-account";
+import { Signup } from "./singup-account";
 
 const Auth = () => {
     const [formhere, setFormher] = useState("login")
@@ -28,8 +29,14 @@ const Auth = () => {
             <div className="pt-3 flex  ">
                 <h1 className="flex font-bold text-pretty text-lg">
             {formhere === "login" ? " ": "signup"} </h1>
-                {formhere === "login" && <><Login/></>}
-                {formhere === "signup" && <>Signup</>}
+                {formhere === "login" && <div className="flex flex-col text-muted-foreground text-sm"><Login/> <div className="flex justify-between items-center"> <p className="flex pt-3 ">No account ? <span className="text- text-orange-500 text-sm text-pretty cursor-pointer hover:underline pl-2" onClick={()=>setFormher("signup")}> Sign up </span></p><div className="flex space-x-3 text-xm items-center pt-3">
+                <Link href="/" className="flex hover:scale-105 rounder hover:font-bold"> Privacy </Link>
+                <Link href="/" className="flex hover:scale-105 rounder hover:font-bold"> Terms </Link>
+                <Link href="/" className="flex hover:scale-105 rounder hover:font-bold"> Policy </Link>
+
+
+                </div></div></div>}
+                {formhere === "signup" && <><Signup/></>}
 
             </div>
             </div>
