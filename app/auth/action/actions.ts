@@ -29,3 +29,20 @@ export  async function  signUp (formdata: z.infer<typeof formSchemes>): Promise<
         data: signupData || error,
     }
 }
+
+export async function loginAc (formData: FormData): Promise<formItems>{
+    const supabase = await createClient()
+    
+    const data = {
+        email: formData.get("email") as string,
+        error: formData.get("error") as string,
+    }
+
+    const {data: loginData, error} = await supabase.auth.signInWithPassword(data); 
+
+    return {
+        data: loginData || error,
+        success: !error,
+        error: error?.message || "Login successfull"
+    }
+}

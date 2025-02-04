@@ -18,12 +18,15 @@ import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
-import { redirect } from "next/navigation"
+
 
 export const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  email: z.string().min(2, {
+    message: "email must be at least 2 characters.",
   }),
+  password: z.string().min(4, {
+    message: "details must be entered correctly"
+  })
 })
 
 export function Login() {
@@ -32,7 +35,8 @@ export function Login() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      email: "",
+      password: "",
     },
   })
 
@@ -40,18 +44,7 @@ export function Login() {
   function onSubmit(values: z.infer<typeof formSchema>) {
        setLoading (true)
 
-   try{
-    if(values){
-      toast.success("Login successful")
-      redirect("/dashboard")
-
-    }
-
-
-   }catch(error){
-    toast.error("something went wrong")
-    console.log(error)
-   }
+   
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
@@ -63,7 +56,7 @@ export function Login() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[300px]">
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
@@ -72,6 +65,22 @@ export function Login() {
               </FormControl>
               <FormDescription>
                 Login with your email address
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+          <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input required type="password" disabled={loading} placeholder="enter email" {...field} />
+              </FormControl>
+              <FormDescription>
+              emter password
               </FormDescription>
               <FormMessage />
             </FormItem>
