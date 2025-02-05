@@ -51,8 +51,8 @@ const Sidebar = () => {
               const isActive= pathname ===input.link || pathname.startsWith(`${input.link}/`)
                     return(
                         <div key={keys} className="w-full h-full ">
-                            <Link href={input.link} className={cn("flex w-full h-full space-x-3 ", isActive && "bg-red-300 text-muted-foreground")}>
-                              <div></div>  {input.icons}  <h1 className="text-secondary text-md ">{input.label}</h1>
+                            <Link href={input.link} className={cn("flex w-full h-full space-x-3 ", isActive && "bg-red-300 text-muted-foreground rounded-md")}>
+                               {input.icons}   <h1 className="text-secondary text-md ">{input.label}</h1>
                             </Link>
 
                         </div>
