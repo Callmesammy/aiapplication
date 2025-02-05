@@ -46,13 +46,13 @@ const Sidebar = () => {
             <CiCloudRainbow className="size-8 space-x-3  text-orange-600"/>
             <h1 className="text-2xl font-bold"> Cloud 16</h1>
             hu</Link>
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col space-y-3 ">
                 {sideItems.map((input, keys)=>{
-              const isActive=()=> pathname ===input.link || pathname.startsWith(`${input.link}/`)
+              const isActive= pathname ===input.link || pathname.startsWith(`${input.link}/`)
                     return(
-                        <div key={keys} className="w-full h-full">
-                            <Link href={input.link} className={cn("f")}>
-
+                        <div key={keys} className="w-full h-full ">
+                            <Link href={input.link} className={cn("flex w-full h-full space-x-3 ", isActive && "bg-red-300 text-muted-foreground")}>
+                              <div></div>  {input.icons}  <h1 className="text-secondary text-md ">{input.label}</h1>
                             </Link>
 
                         </div>
