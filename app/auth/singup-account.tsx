@@ -45,13 +45,21 @@ export function Signup() {
   // 2. Define a submit handler.
  async function onSubmit(values: z.infer<typeof formSchemes>) {
     setLoading (true)
-  const {error,success} = await signUp(values)
-  if(!success){
-    toast.error(String(error))
-  } else{
-    toast.success("Signup Successfully")
-    redirect("/")
-  }
+    try{
+      const {error,success} = await signUp(values)
+      if(!success){
+        toast.error(String(error))
+      } else{
+        toast.success("Signup Successfully")
+        redirect("/confirm")
+      }
+
+    }catch(error){
+      console.log(error)
+    } finally{
+      setLoading (false)
+    }
+  
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)

@@ -5,14 +5,14 @@ import { useState } from "react";
 import { CiCloudRainbow } from "react-icons/ci";
 import { FaGithubAlt } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Login } from "./login-account";
+import { Login } from "../login/login-account";
 import { Signup } from "./singup-account";
 
 const Auth = () => {
     const [formhere, setFormher] = useState("login")
     return (
         <div className="flex w-full   items-center justify-center pt-8 bg-white/10  h-full">
-            <div className="w-[350px]  h-[25rem] shadow-lg flex px-7 justify-center bg-black z-20 rounded-lg flex-col space-y-3 ">
+            <div className="w-[350px]  h-[35rem] shadow-lg flex px-7 justify-center bg-black z-20 rounded-lg flex-col space-y-3 ">
             <span className="flex">  
             <CiCloudRainbow className="size-8 space-x-3  text-orange-600"/>
             <h1 className="text-2xl font-bold"> Cloud 16</h1>
