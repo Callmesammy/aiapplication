@@ -17,25 +17,28 @@ import { cn } from "@/lib/utils";
 const sideItems=[
     {
         label: "Home", 
-        icons: <IoMdHome />,
+        icons: <IoMdHome className="size-6 text-secondary group-hover:rotate-45 duration-500 ease-in-out"/>,
         link: "/dashboard"
     },
     {
         label: "Discover", 
-        icons: <IoNavigateCircle />,
+        icons: <IoNavigateCircle className="size-6 text-secondary group-hover:-rotate-45 duration-500 ease-in-out"/>,
         link: "/discover"
     }, {
         label: "Create Podcast", 
-        icons: <MdPodcasts />,
+        icons: <MdPodcasts className="size-6 text-secondary group-hover:rotate-45 duration-500 ease-in-out"/>,
         link: "/podcast"
     }, {
         label: "My Profile", 
-        icons: <FaUser />,
+        icons: <FaUser className="size-6 text-secondary group-hover:scale-125 duration-500 ease-in-out"/>,
         link: "/profile"
     },
 ]
 
 const Sidebar = () => {
+
+
+
     const pathname = usePathname()
     const handleclick=(url: string)=>{
         window.location.href =url;       
@@ -46,13 +49,13 @@ const Sidebar = () => {
             <CiCloudRainbow className="size-8 space-x-3  text-orange-600"/>
             <h1 className="text-2xl font-bold"> Cloud 16</h1>
             hu</Link>
-            <div className="flex flex-col space-y-3 ">
+            <div className="flex flex-col space-y-7 pt-6 ">
                 {sideItems.map((input, keys)=>{
               const isActive= pathname ===input.link || pathname.startsWith(`${input.link}/`)
                     return(
-                        <div key={keys} className="w-full h-full ">
-                            <Link href={input.link} className={cn("flex w-full h-full space-x-3 ", isActive && "bg-red-300 text-muted-foreground rounded-md")}>
-                               {input.icons}   <h1 className="text-secondary text-md ">{input.label}</h1>
+                        <div key={keys} className="w-full h-full group">
+                            <Link href={input.link} className={cn("flex w-full h-full space-x-3 ", isActive && "bg-muted-foreground/15 text-muted-foreground rounded-md p-2")}>
+                               {input.icons}   <h1 className="text-secondary text-md group-hover:scale-105 duration-500 ease-in-out flex">{input.label}</h1>
                             </Link>
 
                         </div>
