@@ -17,8 +17,8 @@ import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
-import { loginAc } from "../auth/action/actions"
 import { useRouter } from "next/navigation"
+import { loginAc } from "../action/actions"
 
 
 export const formSchema = z.object({
@@ -51,7 +51,7 @@ export function Login() {
         toast.error(String(error))
        }else{
         toast.success("Login successfully")
-        router.push("/dashboard")
+        router.push("/root")
 
        }
     }catch(error){

@@ -18,7 +18,7 @@ import { useState } from "react"
 import { toast } from "sonner"
 import {  redirect } from "next/navigation"
 import { Loader2 } from "lucide-react"
-import { signUp } from "./action/actions"
+import { signUp } from "../action/actions"
 
 export const formSchemes = z.object({
   email: z.string().min(2, {

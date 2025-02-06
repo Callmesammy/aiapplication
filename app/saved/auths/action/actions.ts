@@ -1,9 +1,9 @@
 "use server"
 
 import { createClient } from "@/utils/supabase/server";
-import { formSchemes } from "../singup-account";
+import { formSchemes } from "../login/singup-account";
 import { z } from "zod";
-import { formSchema } from "../../login/login-account";
+import { formSchema } from "../login/login-account";
 
 interface formItems {
     success: boolean | null, 

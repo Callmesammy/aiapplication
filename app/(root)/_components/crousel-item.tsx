@@ -23,7 +23,7 @@ export function CarouselItemn() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-3">
-                <Image src={img.image} width={1000} height={1500} alt="Image" className="  object-fill flex rounded"/>
+                <Image src={img.image} width={200} height={300} alt="Image" className="  object-fill flex "/>
                 </CardContent>
                 
               </Card>
